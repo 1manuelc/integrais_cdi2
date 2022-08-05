@@ -8,9 +8,9 @@ int main()
     printf("Digite a quantidade de termos do polinomio desejado: ");
     scanf("%d", &quantidadePolinomios);
 
-    if(quantidadePolinomios == 0 | quantidadePolinomios < 0)
+    while(quantidadePolinomios == 0 | quantidadePolinomios < 0)
     {
-        printf("Qiantidade de termos inválida, digite novamente");
+        printf("Quantidade de termos invalida, digite novamente\n");
         printf("Digite a quantidade de termos do polinomio desejado: ");
         scanf("%d", &quantidadePolinomios);
     }
