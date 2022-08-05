@@ -127,7 +127,6 @@ int main()
         printf("interou, %.2f", i);
     }
 
-    printf("%.2f %s %.2f", bases[1], strtol(&operacoes[1], +), bases[2]);
     system("pause");
     return 0;
 }

@@ -14,6 +14,7 @@ FASE 02 - OBTENÇÃO E CÁLCULOS PARA RETANGULOS E INTERVALO
 
 FASE 03 - INTEGRAÇÃO
   X  01 - Sair do Loop no For
-    02 - Implementar metodo exaustivo para calcular A = x * f(x) em cada retangulo
-    03 - Acumular a soma das Areas dos retangulos
-    04 - Pedir precisao de decimal para o usuario
+  .  02 - If's para reconhecer operadores de + e -
+  .  03 - Implementar metodo exaustivo para calcular A = x * f(x) em cada retangulo
+  .  04 - Acumular a soma das Areas dos retangulos
+  .  05 - Pedir precisao de decimal para o usuario
