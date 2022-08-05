@@ -5,8 +5,15 @@
 int main()
 {
     int quantidadePolinomios;
-    printf("Digite a quantidade de membros do polinomio desejado: ");
+    printf("Digite a quantidade de termos do polinomio desejado: ");
     scanf("%d", &quantidadePolinomios);
+
+    if(quantidadePolinomios == 0 | quantidadePolinomios < 0)
+    {
+        printf("Qiantidade de termos inválida, digite novamente");
+        printf("Digite a quantidade de termos do polinomio desejado: ");
+        scanf("%d", &quantidadePolinomios);
+    }
 
     float bases[quantidadePolinomios], expoentes[quantidadePolinomios];
     char operacoes[quantidadePolinomios - 1];
@@ -18,6 +25,7 @@ int main()
     printf("%.0fx^", bases[1]);          
     scanf("%f", &expoentes[1]);
 
+    
     if(quantidadePolinomios == 1)
     {
         printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[0], expoentes[0]);
