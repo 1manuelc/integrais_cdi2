@@ -28,7 +28,7 @@ int main()
     
     if(quantidadePolinomios == 1)
     {
-        printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[0], expoentes[0]);
+        printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);
 
     }
 
@@ -97,6 +97,42 @@ int main()
             }
         }
     }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    float quantidadeRetangulos, intervaloInicial, intervaloFinal, baseComum;
+    
+    printf("Quantidade de retangulos: ");
+    scanf("%f", &quantidadeRetangulos);
+
+    while(quantidadeRetangulos == 0 | quantidadeRetangulos < 0)
+    {
+        printf("Quantidade de retangulos invalida, digite novamente\n");
+        printf("Digite a quantidade de retangulos: ");
+        scanf("%f", &quantidadeRetangulos);
+    }
+
+    printf("Intervalo Inicial: ");
+    scanf("%f", &intervaloInicial);
+
+    printf("Intervalo Final: ");
+    scanf("%f", &intervaloFinal);
+
+    baseComum = intervaloFinal / quantidadeRetangulos;
+    printf("\nTamanho das bases e: %.2f\n", baseComum);
+
+    float calculoAtual = 0, acumuladorAreas = 0;
+    for(int i = 0; i <= intervaloFinal; baseComum++)
+    {
+       if(quantidadePolinomios == 1)
+       {
+        calculoAtual = bases[1] *  pow(baseComum, expoentes[1]);
+        acumuladorAreas += calculoAtual;
+        calculoAtual = 0;
+       } 
+    } 
+
+    printf("%.2f", &acumuladorAreas);
 
     system("pause");
     return 0;
