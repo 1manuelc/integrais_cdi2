@@ -20,7 +20,7 @@ int main()
 
     if(quantidadePolinomios == 1)
     {
-        printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[0], expoentes[0]);
+        printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);
 
     }
 
