@@ -122,12 +122,10 @@ int main()
     printf("\nTamanho das bases e: %.2f\n", baseComum);
 
     float calculoAtual = 0, acumuladorSomaDeAreas = 0;
-    for(float i = baseComum; i < intervaloFinal; i += baseComum)
+    for(float i = baseComum; i <= intervaloFinal; i += baseComum)
     {
-        
+        printf("interou, %.2f", i);
     }
-
-    printf("%.2f", acumuladorSomaDeAreas);
 
     system("pause");
     return 0;
