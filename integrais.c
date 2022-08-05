@@ -100,7 +100,7 @@ int main()
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    float quantidadeRetangulos, intervaloInicial, intervaloFinal, baseComum;
+    float quantidadeRetangulos = 0, intervaloInicial = 0, intervaloFinal = 0, baseComum = 0;
     
     printf("Quantidade de retangulos: ");
     scanf("%f", &quantidadeRetangulos);
@@ -118,21 +118,16 @@ int main()
     printf("Intervalo Final: ");
     scanf("%f", &intervaloFinal);
 
-    baseComum = intervaloFinal / quantidadeRetangulos;
+    baseComum = (intervaloFinal - intervaloInicial) / quantidadeRetangulos;
     printf("\nTamanho das bases e: %.2f\n", baseComum);
 
-    float calculoAtual = 0, acumuladorAreas = 0;
-    for(int i = 0; i <= intervaloFinal; baseComum++)
+    float calculoAtual = 0, acumuladorSomaDeAreas = 0;
+    for(float i = baseComum; i < intervaloFinal; i += baseComum)
     {
-       if(quantidadePolinomios == 1)
-       {
-        calculoAtual = bases[1] *  pow(baseComum, expoentes[1]);
-        acumuladorAreas += calculoAtual;
-        calculoAtual = 0;
-       } 
-    } 
+        
+    }
 
-    printf("%.2f", &acumuladorAreas);
+    printf("%.2f", acumuladorSomaDeAreas);
 
     system("pause");
     return 0;
