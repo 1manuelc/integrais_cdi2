@@ -125,12 +125,19 @@ int main()
     float calculoAtual = 0, acumuladorSomaDeAreas = 0;
     float resultados[quantidadePolinomios];
 
-    printf("Calculando a area de cada retangulo pela direita...\n");
-
     for(float i = intervaloInicial + baseComum; i <= intervaloFinal; i += baseComum)
     {
         if(quantidadePolinomios == 1)
-        {
+        {   
+            // mensagem dizendo o ponto de amostragem usado
+            if(intervaloInicial == 0)
+            {
+
+            }
+            if(intervaloInicial > 0)
+            {
+
+            }
             printf("\n%.2f", i);
             calculoAtual = (bases[1] * (pow(i, expoentes[1]))) * baseComum;
             acumuladorSomaDeAreas += calculoAtual;

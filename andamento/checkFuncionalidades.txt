@@ -14,7 +14,7 @@ FASE 02 - OBTENÇÃO E CÁLCULOS PARA RETANGULOS E INTERVALO
 
 FASE 03 - INTEGRAÇÃO
   X  01 - Sair do Loop no For
-  .  02 - If's para reconhecer operadores de + e -
-  .  03 - Implementar metodo exaustivo para calcular A = x * f(x) em cada retangulo
-  .  04 - Acumular a soma das Areas dos retangulos
+  (1/3)  02 - Incluir calculo de polinomios de 1, 2 e 3 termos e associar com operador(es)
+  X  03 - Implementar metodo exaustivo para calcular A = x * f(x) em cada retangulo e acumular
+  .  04 - Citar (pedir no melhor dos casos) no terminal qual ponto de amostragem sera calculado no caso em questao
   .  05 - Pedir precisao de decimal para o usuario
