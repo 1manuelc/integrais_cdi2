@@ -8,10 +8,9 @@ int main()
     printf("Digite a quantidade de termos do polinomio desejado: ");
     scanf("%d", &quantidadePolinomios);
 
-    while(quantidadePolinomios == 0 | quantidadePolinomios < 0)
+    while((quantidadePolinomios == 0) | (quantidadePolinomios < 0))
     {
-        printf("Quantidade de termos invalida, digite novamente\n");
-        printf("Digite a quantidade de termos do polinomio desejado: ");
+        printf("Quantidade de termos invalida, digite novamente: \n");
         scanf("%d", &quantidadePolinomios);
     }
 
@@ -105,7 +104,7 @@ int main()
     printf("Quantidade de retangulos: ");
     scanf("%f", &quantidadeRetangulos);
 
-    while(quantidadeRetangulos == 0 | quantidadeRetangulos < 0)
+    while((quantidadeRetangulos == 0) | (quantidadeRetangulos < 0))
     {
         printf("Quantidade de retangulos invalida, digite novamente\n");
         printf("Digite a quantidade de retangulos: ");
