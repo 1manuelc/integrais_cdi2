@@ -132,7 +132,7 @@ int main()
         if(quantidadePolinomios == 1)
         {
             printf("\n%.2f", i);
-            calculoAtual = bases[1] * (pow(i, expoentes[1]));
+            calculoAtual = (bases[1] * (pow(i, expoentes[1]))) * baseComum;
             acumuladorSomaDeAreas += calculoAtual;
         }
     }
