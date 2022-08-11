@@ -5,12 +5,11 @@
 
 char continuar = '0';
 
-int main()
-{   
+void main() {
     do
-    {    
+    {
         int quantidadePolinomios = 0;
-        printf("Digite a quantidade de termos do polinomio desejado: ");
+        printf("Digite a quantidade de termos do polinomio desejado: \a ");
         scanf("%d", &quantidadePolinomios);
 
         while((quantidadePolinomios == 0) | (quantidadePolinomios < 0))
@@ -26,9 +25,9 @@ int main()
         printf("Digite a base do primeiro membro do polinomio: ");
         scanf("%f", &bases[1]);
 
-        printf("%.0fx^", bases[1]);          
+        printf("%.0fx^", bases[1]);
         scanf("%f", &expoentes[1]);
-        
+
         if(quantidadePolinomios == 1)
         {
             system("cls");
@@ -69,7 +68,7 @@ int main()
 
                     printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
                 }
-                
+
             }
 
             if(quantidadePolinomios == 3)
@@ -93,7 +92,7 @@ int main()
 
                     system("cls");
 
-                    printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3]); 
+                    printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3]);
                 }
 
                 if(escolha[2] == 'V')
@@ -114,7 +113,7 @@ int main()
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         float quantidadeRetangulos = 0, intervaloInicial = 0, intervaloFinal = 0, baseComum = 0;
-        
+
         printf("Quantidade de retangulos: ");
         scanf("%f", &quantidadeRetangulos);
 
@@ -136,7 +135,7 @@ int main()
         printf("\nTamanho das bases: %.2f\n", baseComum);
 
         for(int i = 0; i <= 100; i += 10)
-        {   
+        {
             printf("Calculando: %d%%", i);
 
             for(int j = 0; j < 12; j++)
@@ -169,7 +168,7 @@ int main()
             {
                 if(escolha[1] == 'C')
                 {
-                    switch(operacoes[1]) 
+                    switch(operacoes[1])
                     {
                         case '+':
                         calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) + bases[2];
@@ -192,19 +191,14 @@ int main()
                             calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) / bases[2];
                             acumuladorSomaDeAreas += calculoAtual;
                         }
-
-                        else
-                        {
-                            return 0;
-                        }
                         break;
-                                
+
                     }
                 }
 
                 if(escolha[1] == 'V')
                 {
-                    switch(operacoes[1]) 
+                    switch(operacoes[1])
                     {
                         case '+':
                         calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) + ((bases[2] * (pow(i, expoentes[2]))) * baseComum);
@@ -227,12 +221,12 @@ int main()
                             calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) / ((bases[2] * (pow(i, expoentes[2]))) * baseComum);
                             acumuladorSomaDeAreas += calculoAtual;
                         }
-                        else 
+                        else
                         {
                             printf("Nao foi possivel dividir, pois seu denominador e = 0");
                         }
                         break;
-                                
+
                     }
                 }
             }
@@ -249,7 +243,4 @@ int main()
         }
 
     } while (continuar == 'S');
-    
-    system("pause");
-    return 0;
 }
