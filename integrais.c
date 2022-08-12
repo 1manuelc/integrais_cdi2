@@ -95,7 +95,9 @@ int main() {
                 }
             }
 
-            if(quantidadePolinomios == 3)
+            /* 3 TERMOS SUSPENSOS ESPERANDO DECISAO
+            
+                if(quantidadePolinomios == 3)
             {
                 printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
                 scanf("%f", &bases[2]);
@@ -127,6 +129,7 @@ int main() {
                     printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3], expoentes[3]);
                 }
             }
+            */
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -155,24 +158,24 @@ int main() {
                     switch(operacoes[1])
                     {
                         case '+':
-                        calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) + bases[2];
+                        calculoAtual = (((bases[1] * (pow(i, expoentes[1]))) + bases[2]) * baseComum);
                         acumuladorSomaDeAreas += calculoAtual;
                         break;
 
                         case '-':
-                        calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) - bases[2];
+                        calculoAtual = (((bases[1] * (pow(i, expoentes[1]))) - bases[2]) * baseComum);
                         acumuladorSomaDeAreas += calculoAtual;
                         break;
 
                         case '*':
-                        calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) * bases[2];
+                        calculoAtual = (((bases[1] * (pow(i, expoentes[1]))) * bases[2]) * baseComum);
                         acumuladorSomaDeAreas += calculoAtual;
                         break;
 
                         case '/':
                         if(bases[2] != 0)
                         {
-                            calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) / bases[2];
+                            calculoAtual = (((bases[1] * (pow(i, expoentes[1]))) / bases[2]) * baseComum);
                             acumuladorSomaDeAreas += calculoAtual;
                         }
                         break;
@@ -216,7 +219,7 @@ int main() {
             }
         }
 
-        printf("\nA = %.2f\n\n", acumuladorSomaDeAreas);
+        printf("\nR%.0f = %.2f\n\n", quantidadeRetangulos, acumuladorSomaDeAreas);
 
         printf("Deseja calcular novamente, com outro polinomio?\a (S/N): ");
         scanf("%s", &continuar);
