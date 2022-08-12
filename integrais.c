@@ -10,7 +10,7 @@ void main() {
     do
     {
         int quantidadePolinomios = 0;
-        printf("Digite a quantidade de termos do polinomio desejado: \a ");
+        printf("Digite a quantidade de termos do polinomio desejado:\a ");
         scanf("%d", &quantidadePolinomios);
 
         while((quantidadePolinomios == 0) | (quantidadePolinomios < 0))
@@ -217,7 +217,7 @@ void main() {
 
         printf("\nA = %.2f\n\n", acumuladorSomaDeAreas);
 
-        printf("Deseja calcular novamente, com outro polinomio? (S/N): ");
+        printf("Deseja calcular novamente, com outro polinomio?\a (S/N): ");
         scanf("%s", &continuar);
 
         if(continuar == 'S')
