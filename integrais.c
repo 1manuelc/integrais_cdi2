@@ -20,9 +20,7 @@ int getTermos() {
     return(quantidadePolinomios);
 }
 float getRetangulos() {
-
     float quantidadeRetangulos = 0;
-
     printf("Quantidade de retangulos: ");
     scanf("%f", &quantidadeRetangulos);
 
@@ -32,21 +30,18 @@ float getRetangulos() {
             printf("Digite a quantidade de retangulos: ");
             scanf("%f", &quantidadeRetangulos);
         }
-    
     return(quantidadeRetangulos);
 }
 float getIntervalo1() {
     float intervaloInicial = 0;
     printf("Intervalo Inicial: ");
     scanf("%f", &intervaloInicial);
-
     return(intervaloInicial);
 }
 float getIntervalo2() {
     float intervaloFinal = 0;
     printf("Intervalo Final: ");
     scanf("%f", &intervaloFinal);
-
     return(intervaloFinal);
 }
 
@@ -65,11 +60,9 @@ int main() {
         scanf("%f", &expoentes[1]);
 
         if(quantidadePolinomios == 1)
-        {
+        {   
             system("cls");
-
             printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);
-
         }
 
         if(quantidadePolinomios > 1 && quantidadePolinomios != 1)
@@ -86,9 +79,7 @@ int main() {
                 {
                     printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
                     scanf("%f", &bases[2]);
-
                     system("cls");
-
                     printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2]);
                 }
 
@@ -96,25 +87,20 @@ int main() {
                 {
                     printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
                     scanf("%f", &bases[2]);
-
                     printf("%.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2]);
                     scanf("%f", &expoentes[2]);
 
                     system("cls");
-
                     printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
                 }
-
             }
 
             if(quantidadePolinomios == 3)
             {
                 printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
                 scanf("%f", &bases[2]);
-
                 printf("%.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2]);
                 scanf("%f", &expoentes[2]);
-
                 printf("%.0fx^%.0f %s %.0fx^%.0f ", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
                 scanf("%s", &operacoes[2]);
 
@@ -127,7 +113,6 @@ int main() {
                     scanf("%f", &bases[3]);
 
                     system("cls");
-
                     printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3]);
                 }
 
@@ -135,12 +120,10 @@ int main() {
                 {
                     printf("%.0fx^%.0f %.1s %.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2]);
                     scanf("%f", &bases[3]);
-
                     printf("%.0fx^%.0f %.1s %.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3]);
                     scanf("%f", &expoentes[3]);
 
                     system("cls");
-
                     printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3], expoentes[3]);
                 }
             }
@@ -152,13 +135,11 @@ int main() {
         float intervaloInicial = getIntervalo1(intervaloInicial);
         float intervaloFinal = getIntervalo2(intervaloFinal);
         float baseComum = (intervaloFinal - intervaloInicial) / quantidadeRetangulos;
-
         printf("\nTamanho das bases: %.2f\n", baseComum);
 
         ANIM;
 
         float calculoAtual = 0, acumuladorSomaDeAreas = 0;
-
         for(float i = intervaloInicial + baseComum; i <= intervaloFinal; i += baseComum)
         {
             if(quantidadePolinomios == 1)
@@ -239,12 +220,10 @@ int main() {
 
         printf("Deseja calcular novamente, com outro polinomio?\a (S/N): ");
         scanf("%s", &continuar);
-
         if(continuar == 'S')
         {
             system("cls");
         }
-
     } while (continuar == 'S');
     return 0;
 }
