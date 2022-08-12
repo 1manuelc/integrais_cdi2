@@ -3,25 +3,60 @@
 #include <math.h>
 #include <windows.h>
 #define ANIM for(int i = 0; i <= 100; i += 10) { printf("Calculando: %d%%", i); for(int j = 0; j < 12; j++) { printf("."); Sleep(20);}printf("\r"); for(int k = 0; k < 28; k++) { printf(" "); }printf("\r");}
-
+#define ZERAR_BASES_EXPOENTES float bases[4] = {0, 0, 0, 0}, expoentes[4] = {0, 0, 0, 0};
+#define ZERAR_CARACTERES char operacoes[3] = {'0', '0', '0'}, escolha[3] = {'0', '0', '0'};
 char continuar = '0';
 
-void main() {
-    do
+int getTermos() {
+    int quantidadePolinomios = 0;
+    printf("Digite a quantidade de termos do polinomio desejado: ");
+    scanf("%d", &quantidadePolinomios);
+
+    while((quantidadePolinomios == 0) | (quantidadePolinomios < 0))
     {
-        int quantidadePolinomios = 0;
-        printf("Digite a quantidade de termos do polinomio desejado:\a ");
+        printf("Quantidade de termos invalida, digite novamente: \n");
         scanf("%d", &quantidadePolinomios);
+    }
+    return(quantidadePolinomios);
+}
+float getRetangulos() {
 
-        while((quantidadePolinomios == 0) | (quantidadePolinomios < 0))
+    float quantidadeRetangulos = 0;
+
+    printf("Quantidade de retangulos: ");
+    scanf("%f", &quantidadeRetangulos);
+
+    while((quantidadeRetangulos == 0) | (quantidadeRetangulos < 0))
         {
-            printf("Quantidade de termos invalida, digite novamente: \n");
-            scanf("%d", &quantidadePolinomios);
+            printf("Quantidade de retangulos invalida, digite novamente\n");
+            printf("Digite a quantidade de retangulos: ");
+            scanf("%f", &quantidadeRetangulos);
         }
+    
+    return(quantidadeRetangulos);
+}
+float getIntervalo1() {
+    float intervaloInicial = 0;
+    printf("Intervalo Inicial: ");
+    scanf("%f", &intervaloInicial);
 
-        float bases[4] = {0, 0, 0, 0}, expoentes[4] = {0, 0, 0, 0};
-        char operacoes[3] = {'0', '0', '0'};
-        char escolha[3] = {'0', '0', '0'};
+    return(intervaloInicial);
+}
+float getIntervalo2() {
+    float intervaloFinal = 0;
+    printf("Intervalo Final: ");
+    scanf("%f", &intervaloFinal);
+
+    return(intervaloFinal);
+}
+
+int main() {
+    do {   
+        int quantidadePolinomios = getTermos(quantidadePolinomios);
+
+        continuar = '0';
+        ZERAR_BASES_EXPOENTES;
+        ZERAR_CARACTERES;
 
         printf("Digite a base do primeiro membro do polinomio: ");
         scanf("%f", &bases[1]);
@@ -113,25 +148,10 @@ void main() {
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        float quantidadeRetangulos = 0, intervaloInicial = 0, intervaloFinal = 0, baseComum = 0;
-
-        printf("Quantidade de retangulos: ");
-        scanf("%f", &quantidadeRetangulos);
-
-        while((quantidadeRetangulos == 0) | (quantidadeRetangulos < 0))
-        {
-            printf("Quantidade de retangulos invalida, digite novamente\n");
-            printf("Digite a quantidade de retangulos: ");
-            scanf("%f", &quantidadeRetangulos);
-        }
-
-        printf("Intervalo Inicial: ");
-        scanf("%f", &intervaloInicial);
-
-        printf("Intervalo Final: ");
-        scanf("%f", &intervaloFinal);
-
-        baseComum = (intervaloFinal - intervaloInicial) / quantidadeRetangulos;
+        float quantidadeRetangulos = getRetangulos(quantidadeRetangulos);
+        float intervaloInicial = getIntervalo1(intervaloInicial);
+        float intervaloFinal = getIntervalo2(intervaloFinal);
+        float baseComum = (intervaloFinal - intervaloInicial) / quantidadeRetangulos;
 
         printf("\nTamanho das bases: %.2f\n", baseComum);
 
@@ -226,4 +246,5 @@ void main() {
         }
 
     } while (continuar == 'S');
+    return 0;
 }
