@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <windows.h>
+#define ANIM for(int i = 0; i <= 100; i += 10) { printf("Calculando: %d%%", i); for(int j = 0; j < 12; j++) { printf("."); Sleep(20);}printf("\r"); for(int k = 0; k < 28; k++) { printf(" "); }printf("\r");}
 
 char continuar = '0';
 
@@ -134,25 +135,7 @@ void main() {
 
         printf("\nTamanho das bases: %.2f\n", baseComum);
 
-        for(int i = 0; i <= 100; i += 10)
-        {
-            printf("Calculando: %d%%", i);
-
-            for(int j = 0; j < 12; j++)
-            {
-                printf(".");
-                Sleep(20);
-            }
-
-            printf("\r");
-
-            for(int k = 0; k < 28; k++)
-            {
-                printf(" ");
-            }
-
-            printf("\r");
-        }
+        ANIM;
 
         float calculoAtual = 0, acumuladorSomaDeAreas = 0;
 
