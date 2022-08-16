@@ -59,77 +59,34 @@ int main() {
         printf("%.0fx^", bases[1]);
         scanf("%f", &expoentes[1]);
 
-        if(quantidadePolinomios == 1)
-        {   
+        if(quantidadePolinomios == 1) {   
             system("cls");
             printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);
         }
 
-        if(quantidadePolinomios > 1 && quantidadePolinomios != 1)
-        {
+        if(quantidadePolinomios == 2) {
             printf("%.0fx^%.0f ", bases[1], expoentes[1]);
             scanf("%s", &operacoes[1]);
 
-            if(quantidadePolinomios == 2)
-            {
-                printf("\nSeu polinomio possui variavel ou constante no segundo termo (V/C)?: ");
-                scanf("%s", &escolha[1]);
+            printf("\nSeu polinomio possui variavel ou constante no segundo termo (V/C)?: ");
+            scanf("%s", &escolha[1]);
 
-                if(escolha[1] == 'C')
-                {
-                    printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
-                    scanf("%f", &bases[2]);
-                    system("cls");
-                    printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2]);
-                }
-
-                if(escolha[1] == 'V')
-                {
-                    printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
-                    scanf("%f", &bases[2]);
-                    printf("%.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2]);
-                    scanf("%f", &expoentes[2]);
-
-                    system("cls");
-                    printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
-                }
+            if(escolha[1] == 'C') {
+                printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
+                scanf("%f", &bases[2]);
+                system("cls");
+                printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2]);
             }
 
-            /* 3 TERMOS SUSPENSOS ESPERANDO DECISAO
-            
-                if(quantidadePolinomios == 3)
-            {
+            if(escolha[1] == 'V') {
                 printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
                 scanf("%f", &bases[2]);
                 printf("%.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2]);
                 scanf("%f", &expoentes[2]);
-                printf("%.0fx^%.0f %s %.0fx^%.0f ", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
-                scanf("%s", &operacoes[2]);
 
-                printf("\nSeu polinomio possui variavel ou constante no terceiro termo (V/C)?: ");
-                scanf("%s", &escolha[2]);
-
-                if(escolha[2] == 'C')
-                {
-                    printf("%.0fx^%.0f %.1s %.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2]);
-                    scanf("%f", &bases[3]);
-
-                    system("cls");
-                    printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3]);
-                }
-
-                if(escolha[2] == 'V')
-                {
-                    printf("%.0fx^%.0f %.1s %.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2]);
-                    scanf("%f", &bases[3]);
-                    printf("%.0fx^%.0f %.1s %.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3]);
-                    scanf("%f", &expoentes[3]);
-
-                    system("cls");
-                    printf("\nPolinomio computado:\n%.0fx^%.0f %.1s %.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2], &operacoes[2], bases[3], expoentes[3]);
-                }
+                system("cls");
+                printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
             }
-            */
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,18 +102,14 @@ int main() {
         float calculoAtual = 0, acumuladorSomaDeAreas = 0;
         for(float i = intervaloInicial + baseComum; i <= intervaloFinal; i += baseComum)
         {
-            if(quantidadePolinomios == 1)
-            {
+            if(quantidadePolinomios == 1) {
                 calculoAtual = (bases[1] * (pow(i, expoentes[1]))) * baseComum;
                 acumuladorSomaDeAreas += calculoAtual;
             }
 
-            if(quantidadePolinomios == 2)
-            {
-                if(escolha[1] == 'C')
-                {
-                    switch(operacoes[1])
-                    {
+            if(quantidadePolinomios == 2) {
+                if(escolha[1] == 'C') {
+                    switch(operacoes[1]) {
                         case '+':
                         calculoAtual = (((bases[1] * (pow(i, expoentes[1]))) + bases[2]) * baseComum);
                         acumuladorSomaDeAreas += calculoAtual;
@@ -173,20 +126,16 @@ int main() {
                         break;
 
                         case '/':
-                        if(bases[2] != 0)
-                        {
+                        if(bases[2] != 0) {
                             calculoAtual = (((bases[1] * (pow(i, expoentes[1]))) / bases[2]) * baseComum);
                             acumuladorSomaDeAreas += calculoAtual;
                         }
                         break;
-
                     }
                 }
 
-                if(escolha[1] == 'V')
-                {
-                    switch(operacoes[1])
-                    {
+                if(escolha[1] == 'V') {
+                    switch(operacoes[1]) {
                         case '+':
                         calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) + ((bases[2] * (pow(i, expoentes[2]))) * baseComum);
                         acumuladorSomaDeAreas += calculoAtual;
@@ -203,13 +152,10 @@ int main() {
                         break;
 
                         case '/':
-                        if(bases[2] != 0)
-                        {
+                        if(bases[2] != 0) {
                             calculoAtual = ((bases[1] * (pow(i, expoentes[1]))) * baseComum) / ((bases[2] * (pow(i, expoentes[2]))) * baseComum);
                             acumuladorSomaDeAreas += calculoAtual;
-                        }
-                        else
-                        {
+                        } else {
                             printf("Nao foi possivel dividir, pois seu denominador e = 0");
                         }
                         break;
@@ -223,10 +169,10 @@ int main() {
 
         printf("Deseja calcular novamente, com outro polinomio?\a (S/N): ");
         scanf("%s", &continuar);
-        if(continuar == 'S')
-        {
-            system("cls");
-        }
+        if(continuar == 'S') {
+            system("cls");}
+
     } while (continuar == 'S');
+    
     return 0;
 }
