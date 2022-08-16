@@ -5,6 +5,11 @@
 #define ANIM for(int i = 0; i <= 100; i += 10) { printf("Calculando: %d%%", i); for(int j = 0; j < 12; j++) { printf("."); Sleep(20);}printf("\r"); for(int k = 0; k < 28; k++) { printf(" "); }printf("\r");}
 #define ZERAR_BASES_EXPOENTES float bases[4] = {0, 0, 0, 0}, expoentes[4] = {0, 0, 0, 0};
 #define ZERAR_CARACTERES char operacoes[3] = {'0', '0', '0'}, escolha[3] = {'0', '0', '0'};
+
+#define GET_PRIMEIRO_TERMO printf("Digite a base do primeiro membro do polinomio: "); scanf("%f", &bases[1]); printf("%.0fx^", bases[1]); scanf("%f", &expoentes[1]); if(quantidadePolinomios == 1) { system("cls"); printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);}
+
+#define GET_SEGUNDO_TERMO printf("%.0fx^%.0f ", bases[1], expoentes[1]); scanf("%s", &operacoes[1]); printf("\nSeu polinomio possui variavel ou constante no segundo termo (V/C)?: "); scanf("%s", &escolha[1]); if(escolha[1] == 'C') { printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]); scanf("%f", &bases[2]); system("cls"); printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2]);} if(escolha[1] == 'V') { printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]); scanf("%f", &bases[2]); printf("%.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2]); scanf("%f", &expoentes[2]); system("cls"); printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);}
+
 char continuar = '0';
 
 int getTermos() {
@@ -53,42 +58,9 @@ int main() {
         ZERAR_BASES_EXPOENTES;
         ZERAR_CARACTERES;
 
-        printf("Digite a base do primeiro membro do polinomio: ");
-        scanf("%f", &bases[1]);
-
-        printf("%.0fx^", bases[1]);
-        scanf("%f", &expoentes[1]);
-
-        if(quantidadePolinomios == 1) {   
-            system("cls");
-            printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);
-        }
-
+        GET_PRIMEIRO_TERMO;
         if(quantidadePolinomios == 2) {
-            printf("%.0fx^%.0f ", bases[1], expoentes[1]);
-            scanf("%s", &operacoes[1]);
-
-            printf("\nSeu polinomio possui variavel ou constante no segundo termo (V/C)?: ");
-            scanf("%s", &escolha[1]);
-
-            if(escolha[1] == 'C') {
-                printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
-                scanf("%f", &bases[2]);
-                system("cls");
-                printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2]);
-            }
-
-            if(escolha[1] == 'V') {
-                printf("%.0fx^%.0f %s ", bases[1], expoentes[1], &operacoes[1]);
-                scanf("%f", &bases[2]);
-                printf("%.0fx^%.0f %s %.0fx^", bases[1], expoentes[1], &operacoes[1], bases[2]);
-                scanf("%f", &expoentes[2]);
-
-                system("cls");
-                printf("\nPolinomio computado:\n%.0fx^%.0f %s %.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1], &operacoes[1], bases[2], expoentes[2]);
-            }
-        }
-
+            GET_SEGUNDO_TERMO; }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         float quantidadeRetangulos = getRetangulos(quantidadeRetangulos);
@@ -159,7 +131,6 @@ int main() {
                             printf("Nao foi possivel dividir, pois seu denominador e = 0");
                         }
                         break;
-
                     }
                 }
             }
