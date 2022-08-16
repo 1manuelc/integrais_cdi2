@@ -5,6 +5,7 @@
 #define ANIM for(int i = 0; i <= 100; i += 10) { printf("Calculando: %d%%", i); for(int j = 0; j < 12; j++) { printf("."); Sleep(20);}printf("\r"); for(int k = 0; k < 28; k++) { printf(" "); }printf("\r");}
 #define ZERAR_BASES_EXPOENTES float bases[4] = {0, 0, 0, 0}, expoentes[4] = {0, 0, 0, 0};
 #define ZERAR_CARACTERES char operacoes[3] = {'0', '0', '0'}, escolha[3] = {'0', '0', '0'};
+#define ZERAR_CALCULOS float calculoAtual = 0, acumuladorSomaDeAreas = 0;
 
 #define GET_PRIMEIRO_TERMO printf("Digite a base do primeiro membro do polinomio: "); scanf("%f", &bases[1]); printf("%.0fx^", bases[1]); scanf("%f", &expoentes[1]); if(quantidadePolinomios == 1) { system("cls"); printf("\nPolinomio computado:\n%.0fx^%.0f\nEnviando para integracao...\n\n", bases[1], expoentes[1]);}
 
@@ -61,7 +62,6 @@ int main() {
         GET_PRIMEIRO_TERMO;
         if(quantidadePolinomios == 2) {
             GET_SEGUNDO_TERMO; }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         float quantidadeRetangulos = getRetangulos(quantidadeRetangulos);
         float intervaloInicial = getIntervalo1(intervaloInicial);
@@ -71,9 +71,8 @@ int main() {
 
         ANIM;
 
-        float calculoAtual = 0, acumuladorSomaDeAreas = 0;
-        for(float i = intervaloInicial + baseComum; i <= intervaloFinal; i += baseComum)
-        {
+        ZERAR_CALCULOS;
+        for(float i = intervaloInicial + baseComum; i <= intervaloFinal; i += baseComum) {
             if(quantidadePolinomios == 1) {
                 calculoAtual = (bases[1] * (pow(i, expoentes[1]))) * baseComum;
                 acumuladorSomaDeAreas += calculoAtual;
