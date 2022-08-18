@@ -15,7 +15,7 @@ int getTermos() {
 
     while((quantidadePolinomios == 0) | (quantidadePolinomios < 0))
     {
-        printf("Quantidade de termos invalida, digite novamente: \n");
+        printf("Quantidade de termos invalida, digite novamente: ");
         scanf("%d", &quantidadePolinomios);
     }
     return(quantidadePolinomios);
@@ -27,7 +27,7 @@ float getRetangulos() {
 
     while((quantidadeRetangulos == 0) | (quantidadeRetangulos < 0))
         {
-            printf("Quantidade de retangulos invalida, digite novamente\n");
+            printf("Quantidade de retangulos invalida, digite novamente: ");
             scanf("%f", &quantidadeRetangulos);
         }
     return(quantidadeRetangulos);
