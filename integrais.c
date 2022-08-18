@@ -28,7 +28,6 @@ float getRetangulos() {
     while((quantidadeRetangulos == 0) | (quantidadeRetangulos < 0))
         {
             printf("Quantidade de retangulos invalida, digite novamente\n");
-            printf("Digite a quantidade de retangulos: ");
             scanf("%f", &quantidadeRetangulos);
         }
     return(quantidadeRetangulos);
