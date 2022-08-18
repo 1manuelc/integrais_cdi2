@@ -5,6 +5,7 @@
 #define ANIM for(int i = 0; i <= 100; i += 10) { printf("Calculando: %d%%", i); for(int j = 0; j < 12; j++) { printf("."); Sleep(20);}printf("\r"); for(int k = 0; k < 28; k++) { printf(" "); }printf("\r");}
 #define ZERAR_BASES_EXPOENTES float bases[4] = {0, 0, 0, 0}, expoentes[4] = {0, 0, 0, 0};
 #define ZERAR_CARACTERES char operacoes[3] = {'0', '0', '0'}, escolha[3] = {'0', '0', '0'};
+#define ZERAR_CALCULO float calculoAtual = 0, acumuladorSomaDeAreas = 0;
 char continuar = '0';
 
 int getTermos() {
@@ -99,7 +100,7 @@ int main() {
 
         ANIM;
 
-        float calculoAtual = 0, acumuladorSomaDeAreas = 0;
+        ZERAR_CALCULO;
         for(float i = intervaloInicial + baseComum; i <= intervaloFinal; i += baseComum)
         {
             if(quantidadePolinomios == 1) {
