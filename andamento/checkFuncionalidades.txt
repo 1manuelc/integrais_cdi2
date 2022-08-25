@@ -3,7 +3,7 @@ FASE 01 - OBTENÇÃO DO POLINÔMIO
   X  01 - Pedir quantidade de termos do polinomio
   X  02 - Criar estutura para termo unico
   X  03 - Criar estrutura de decisao para incluir constantes no segundo termo em diante
-  .  04 - Alinhar com o grupo a quantidade de termos possiveis
+  X  04 - Alinhar com o grupo a quantidade de termos possiveis
   X  05 - Ter num documento a parte os pointers de cada base e expoente para serem usados na integracao
 
 FASE 02 - OBTENÇÃO E CÁLCULOS PARA RETANGULOS E INTERVALO
@@ -14,7 +14,5 @@ FASE 02 - OBTENÇÃO E CÁLCULOS PARA RETANGULOS E INTERVALO
 
 FASE 03 - INTEGRAÇÃO
   X  01 - Sair do Loop no For
-  (1/3)  02 - Incluir calculo de polinomios de 1, 2 e 3 termos e associar com operador(es)
+  (2/2)  02 - Incluir calculo de polinomios de 2 termos;
   X  03 - Implementar metodo exaustivo para calcular A = x * f(x) em cada retangulo e acumular
-  .  04 - Citar (pedir no melhor dos casos) no terminal qual ponto de amostragem sera calculado no caso em questao
-  .  05 - Pedir precisao de decimal para o usuario
