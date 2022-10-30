@@ -1,3 +1,5 @@
+# git rm -r --cached arquivo.algo
+
 # Prerequisites
 *.d
 
@@ -51,4 +53,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-/.vscode/
+# Folders
+.vscode
+andamento
